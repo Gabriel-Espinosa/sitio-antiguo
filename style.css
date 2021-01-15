@@ -1,0 +1,1920 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  /* ESTRUCTURA SITIO WEB */
+.contenedor{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80px repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+  /*  grid-template-rows: 80px repeat(3, 100vh) 93vh 7vh; */
+    grid-template-areas: "header"
+                        "inicio"
+                        "sobre-mi"
+                        "servicios"
+                        "contacto"
+                        "footer";    
+}
+
+/* FIN ESTRUCTURA */
+
+/* BARRA DE NAVEGACIÓN */
+nav{
+  /*  background: #0082e6; */
+ /* background: #555555; */
+ background: #52616b;
+    height: 80px;
+    width: 100%;
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+
+  label.logo a{
+    color: white;
+    text-decoration: none;
+  }
+  label.logo a:hover{
+    background: none;
+  }
+
+
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+   text-transform: uppercase;
+  }
+  a.active,a:hover{
+  /*  background: #1b9bff;*/
+    background: #1e2022;
+    transition: .5s;
+    color: white;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+
+  nav i{
+    padding-right: 1vh;
+  }
+
+  nav .fa-envelope{
+    margin-right: auto;
+  }
+
+/* FIN BARRA DE NAVEGACION */
+
+/*ESTILOS GENERALES SECCIONES */
+.sobre-mi, .servicios, .contacto{
+    padding-top: 80px;
+}
+/* FIN ESTILOS GENERALES */
+
+/* INICIO */
+.inicio{
+    grid-area: inicio;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 10px;
+    background-image: url(imagen-de-fondo.jpg);
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%;
+}
+
+.foto{
+    width: 30vh;
+    height: 30%;
+    border-radius: 50%;
+    align-self: center;
+    border: 3px solid black;
+}
+
+.inicio h1{
+    font-size: 32px;
+    margin-top: 6vh; /*40px*/
+    margin-bottom: 3vh; /*20px*/
+    font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke: 0.3px black;
+  color: black;
+}
+
+.inicio h2{
+    font-size: 28px;
+    margin-bottom: 3vh; /*20px*/
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    -webkit-text-stroke: 0.3px black;
+}
+
+.fa-linkedin{
+  color:black;
+  -webkit-text-stroke: 0.3px black;
+    font-size: 32px;
+    cursor: pointer;
+}
+/* FIN INICIO */
+
+/* ACERCA DE MI */
+.sobre-mi{
+    grid-area: sobre-mi;
+  /*  display: flex;
+    flex-flow: column nowrap;
+    background: #cdc9c3;*/
+    background: #c9d6df;
+ /*   color: #1e2022; */
+}
+
+.sobre-mi h2{
+  font-size: 32px;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.sobre-mi p{
+ font-size: 28px;
+  margin-left: 10vh;
+  margin-right: 10vh; 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+/*  FIN ACERCA DE MI */
+
+/* SERVICIOS */
+.servicios{
+    grid-area: servicios;
+    background: #f0f5f9;
+}
+
+.servicios h2{
+  font-size: 32px;
+  margin-top: 20px;
+  margin-left: 10vh;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-servicios{
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: repeat(2, minmax(35vh, auto));
+  grid-template-areas: "investigacion auditoria editorial"
+                        "producto linkbuilding desempeño";
+  margin-right: 10vh;
+  margin-left: 10vh;
+/*  max-height: 100%; */
+}
+
+.investigacion, .auditoria, .editorial, .producto, .linkbuilding, .desempeño{
+  border: 2px solid #1e2022;
+  color: #1e2022;
+  background:#c9d6df;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, minmax(50%, auto));
+  grid-template-areas: "icono"
+                        "texto";
+  /* display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-evenly; */
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  grid-area: icono;
+  align-self: center;
+  justify-self: center;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  grid-area: texto;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-size: 26px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.investigacion:hover, .auditoria:hover, .editorial:hover, .producto:hover, .linkbuilding:hover, .desempeño:hover{
+  background: #1e2022;
+  color: #f0f5f9;
+}
+
+.investigacion{
+  grid-area: investigacion;
+}
+
+.auditoria{
+  grid-area: auditoria;
+}
+
+.editorial{
+  grid-area: editorial;
+}
+
+.producto{
+  grid-area: producto;
+}
+
+.linkbuilding{
+  grid-area: linkbuilding;
+}
+
+.desempeño{
+  grid-area: desempeño;
+}
+
+/* FIN SERVICIOS */
+
+/* CONTACTO */
+.contacto{
+    grid-area: contacto;
+    background: #c9d6df;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contacto h2{
+  font-size: 32px;
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.fa-envelope{
+  margin-right: 10px;
+}
+
+.grid-contacto{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 100%;
+  grid-template-areas: "form datos";
+  margin-right: 10vh;
+  margin-left: 10vh;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr;
+    grid-template-rows: 5vh 5vh 5vh 42vh 5vh; 
+ /*   grid-template-rows: 30px 30px 30px 30px 210px 30px; */
+    grid-template-areas: "nombre"
+                         "email"
+                         "asunto"
+                         "mensaje"
+                         "enviar";
+    grid-gap: 1vh;
+}
+
+#nombre{
+  grid-area: nombre;
+/*  margin-right: 0px; */
+}
+
+#email{
+  grid-area: email;
+}
+
+#asunto{
+  grid-area: asunto;
+}
+
+#mensaje{
+  grid-area: mensaje;
+}
+
+.enviar{
+  grid-area: enviar;
+  width: 50%;
+  justify-self: end;
+  cursor: pointer;
+}
+
+input[type="text"], input[type="email"], input[type="number"], textarea{
+  background-color: #f0f5f9;
+  border: 0.5px solid #1e2022;
+  color: #1e2022;
+}
+input{
+  border: 1px solid #1e2022; 
+}
+
+.datos{
+  grid-area: datos;
+  font-size: 20px;
+  margin-left: 5vh;
+}
+
+.telefono-datos, .direccion-datos{
+  margin-top: 5vh; /*5vh* prueba*/
+}
+/* FIN CONTACTO */
+
+/* FOOTER */
+footer{
+    grid-area: footer;
+    display: grid;
+    background: #f0f5f9;
+}
+
+footer p{
+  place-self: center;
+  margin-right: 10vh;
+  margin-left: 10vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* FIN FOOTER */
+
+/* MEDIA QUERIES */
+
+
+/*PANTALLAS 8K*/
+@media screen and (min-width: 7680px){
+  /* ESTRUCTURA SITIO WEB*/
+  .contenedor{
+    grid-template-rows: 10vh repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+  }
+  /*FIN ESTRUCTURA SITIO WEB*/
+
+  /*BARRA DE NAVEGACION*/
+  nav{
+    height: 10vh;
+    display: grid;
+    grid-template-rows: 10vh;
+    grid-template-columns: 33.3% 66.6%;
+    grid-template-areas: "logo lista";
+  }
+  
+  label.logo{
+    grid-area: logo;
+    color: white;
+    font-size: 200px;
+    font-weight: bold;
+    place-self: center;
+  }
+  nav ul{
+    grid-area: lista;
+    margin-right: 5vh;
+    align-self: center;
+    justify-self: end;
+  }
+  nav ul li{
+    margin: 0 5px; 
+  }
+  nav ul li a{
+    color: white;
+    font-size: 100px;
+    padding: 7px 100px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  /*FIN BARRA DE NAVEGACIÓN*/
+
+  /*ESTILOS GENERALES*/
+  .sobre-mi, .servicios, .contacto{
+    padding-top: 10vh;
+}
+  /*FIN ESTILOS GENERALES*/
+
+  /*INICIO*/
+  .inicio img{
+    width: 30vh;
+    height: 30%;
+    border-radius: 50%;
+    align-self: center;
+    border: 20px solid white;
+}
+
+.inicio h1{
+    font-size: 160px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+}
+
+.inicio h2{
+    font-size: 150px;
+    margin-bottom: 3vh;
+}
+
+.fa-linkedin{
+  font-size: 160px;
+}
+/*FIN INICIO*/
+
+    /* ACERCA DE MI */
+.sobre-mi{
+  grid-area: sobre-mi;
+}
+
+.sobre-mi h2{
+font-size: 192px;
+margin-left: 10vh;
+margin-right: 10vh;
+margin-top: 2vh;
+padding-bottom: 1vh;
+}
+
+.sobre-mi p{
+font-size: 180px;
+margin-left: 10vh;
+margin-right: 10vh; 
+margin-top: 3vh;
+margin-bottom: 3vh;
+} 
+/*  FIN ACERCA DE MI */
+
+/*SERVICIOS*/
+.grid-servicios{
+  grid-gap: 1vh;
+}
+.servicios h2{
+  font-size: 192px;
+  padding-bottom: 2vh;
+  margin-top: 2vh;
+}
+.investigacion, .auditoria, .editorial, .producto, .linkbuilding, .desempeño{
+  border-radius: 30px;
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  font-size: 164px;
+  margin-top: 30px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  font-size: 164px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 192px;
+  padding-bottom: 2vh;
+  margin-top: 2vh;
+}
+
+input, textarea{
+  font-size: 120px;
+}
+
+.datos{
+  font-size: 150px;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  font-size: 120px;
+}
+/*FIN FOOTER*/
+
+}
+
+/*FIN PANTALLAS 8K*/
+
+/*PANTALLAS 4K (3840x2160)*/
+@media screen and (min-width: 3840px) and (max-width: 7679px){
+
+    /* ESTRUCTURA SITIO WEB*/
+    .contenedor{
+      grid-template-rows: 10vh repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+    }
+    /*FIN ESTRUCTURA SITIO WEB*/
+
+    /*BARRA DE NAVEGACION*/
+    nav{
+      height: 10vh;
+      display: grid;
+      grid-template-rows: 10vh;
+      grid-template-columns: 33.3% 66.6%;
+      grid-template-areas: "logo lista";
+    }
+    
+    label.logo{
+      grid-area: logo;
+      color: white;
+      font-size: 100px;
+      font-weight: bold;
+      place-self: center;
+    }
+    nav ul{
+      grid-area: lista;
+      margin-right: 5vh;
+      align-self: center;
+      justify-self: end;
+    }
+    nav ul li{
+      margin: 0 5px; 
+    }
+    nav ul li a{
+      color: white;
+      font-size: 50px;
+      padding: 7px 50px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    /*FIN BARRA DE NAVEGACIÓN*/
+
+    /*ESTILOS GENERALES*/
+    .sobre-mi, .servicios, .contacto{
+      padding-top: 10vh;
+  }
+    /*FIN ESTILOS GENERALES*/
+  
+    /*INICIO*/
+    .inicio img{
+      width: 30vh;
+      height: 30%;
+      border-radius: 50%;
+      align-self: center;
+      border: 12px solid white;
+  }
+  
+  .inicio h1{
+      font-size: 96px;
+      margin-top: 6vh;
+      margin-bottom: 3vh;
+  }
+  
+  .inicio h2{
+      font-size: 92px;
+      margin-bottom: 3vh;
+  }
+
+  .fa-linkedin{
+    font-size: 96px;
+  }
+  /*FIN INICIO*/
+  
+      /* ACERCA DE MI */
+  .sobre-mi{
+    grid-area: sobre-mi;
+  }
+  
+  .sobre-mi h2{
+  font-size: 96px;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-top: 2vh;
+  padding-bottom: 2vh;
+  }
+  
+  .sobre-mi p{
+  font-size: 90px;
+  margin-left: 10vh;
+  margin-right: 10vh; 
+  margin-top: 35px;
+  margin-bottom: 35px;
+  } 
+  /*  FIN ACERCA DE MI */
+  
+  /*SERVICIOS*/
+  .grid-servicios{
+    grid-gap: 1vh;
+  }
+  .servicios h2{
+    font-size: 96px;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+  }
+  .investigacion, .auditoria, .editorial, .producto, .linkbuilding, .desempeño{
+    border-radius: 15px;
+  }
+
+  .investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+    font-size: 82px;
+    margin-top: 30px;
+  }
+  
+  .investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+    font-size: 82px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  /*FIN SERVICIOS*/
+  
+  /*CONTACTO*/
+  .contacto h2{
+    font-size: 96px;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+  }
+
+  input, textarea{
+    font-size: 60px;
+  }
+  
+  .datos{
+    font-size: 75px;
+  }
+  /*FIN CONTACTO*/
+
+  /*FOOTER*/
+  footer p{
+    font-size: 60px;
+  }
+  /*FIN FOOTER*/
+}
+/*FIN PANTALLAS 4K (3840x2160)*/
+
+/*PANTALLAS 2560x1440*/ 
+@media screen and (min-width: 2560px) and (max-width: 3839px){
+  /*ESTRUCTURA SITIO WEB*/
+  .contenedor{
+    grid-template-rows: 10vh repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+  }
+  /*FIN ESTRUCTURA SITIO WEB*/
+
+  /*BARRA DE NAVEGACION*/
+  nav{
+    height: 10vh;
+    display: grid;
+    grid-template-rows: 10vh;
+    grid-template-columns: 33.3% 66.6%;
+    grid-template-areas: "logo lista";
+  }
+  
+  label.logo{
+    grid-area: logo;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    place-self: center;
+  }
+  nav ul{
+    grid-area: lista;
+    margin-right: 5vh;
+    align-self: center;
+    justify-self: end;
+  }
+  nav ul li{
+    margin: 0 5px; 
+  }
+  nav ul li a{
+    color: white;
+    font-size: 36px;
+    padding: 7px 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  /*FIN BARRA DE NAVEGACIÓN*/
+
+  /*ESTILOS GENERALES*/
+  .sobre-mi, .servicios, .contacto{
+    padding-top: 10vh;
+}
+  /*FIN ESTILOS GENERALES*/
+
+  /*INICIO*/
+  .inicio img{
+    width: 30vh;
+    height: 30%;
+    border-radius: 50%;
+    align-self: center;
+    border: 10px solid white;
+}
+
+.inicio h1{
+    font-size: 64px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+}
+
+.inicio h2{
+    font-size: 60px;
+    margin-bottom: 3vh;
+}
+
+.fa-linkedin{
+  font-size: 64px;
+}
+/*FIN INICIO*/
+
+/* ACERCA DE MI */
+.sobre-mi{
+  grid-area: sobre-mi;
+}
+
+.sobre-mi h2{
+font-size: 64px;
+margin-left: 10vh;
+margin-right: 10vh;
+margin-top: 40px;
+}
+
+.sobre-mi p{
+font-size: 56px;
+margin-left: 10vh;
+margin-right: 10vh; 
+margin-top: 35px;
+margin-bottom: 35px;
+} 
+/*  FIN ACERCA DE MI */
+
+/*SERVICIOS*/
+.servicios h2{
+  font-size: 64px;
+}
+
+.investigacion, .auditoria, .editorial, .producto, .linkbuilding, .desempeño{
+  margin: 0.75vh;
+  border-radius: 18px;
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  font-size: 56px;
+  margin-top: 30px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  font-size: 56px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 64px;
+  margin-bottom: 3vh;
+}
+
+input, textarea{
+  font-size: 30px;
+}
+
+.datos{
+  font-size: 52px;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  font-size: 40px;
+}
+}
+/*FIN PANTALLAS 2560x1440*/
+
+/* PANTALLAS FULL HD 1920x1080 */
+@media screen and (min-width: 1920px) and (max-width: 2559px){
+  /*ESTRUCTURA SITIO WEB*/
+  .contenedor{
+    grid-template-rows: 10vh repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+  }
+  /*FIN ESTRUCTURA SITIO WEB*/
+
+  /*BARRA DE NAVEGACION*/
+  nav{
+    height: 10vh;
+    display: grid;
+    grid-template-rows: 10vh;
+    grid-template-columns: 33.3% 66.6%;
+    grid-template-areas: "logo lista";
+  }
+  
+  label.logo{
+    grid-area: logo;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    place-self: center;
+  }
+  nav ul{
+    grid-area: lista;
+    margin-right: 5vh;
+    align-self: center;
+    justify-self: end;
+  }
+  nav ul li{
+    margin: 0 5px; 
+  }
+  nav ul li a{
+    color: white;
+    font-size: 26px;
+    padding: 7px 14px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  /*FIN BARRA DE NAVEGACIÓN*/
+
+  /*ESTILOS GENERALES*/
+  .sobre-mi, .servicios, .contacto{
+    padding-top: 10vh;
+}
+  /*FIN ESTILOS GENERALES*/
+
+  /*INICIO*/
+  .inicio img{
+    width: 40vh;
+    height: 40%;
+    border-radius: 50%;
+    align-self: center;
+    border: 8px solid white;
+}
+
+.inicio h1{
+    font-size: 48px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+}
+
+.inicio h2{
+    font-size: 38px;
+    margin-bottom: 3vh;
+}
+
+.fa-linkedin{
+  font-size: 48px;
+}
+/*FIN INICIO*/
+
+    /* ACERCA DE MI */
+.sobre-mi{
+  grid-area: sobre-mi;
+}
+
+.sobre-mi h2{
+font-size: 48px;
+margin-left: 10vh;
+margin-right: 10vh;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
+.sobre-mi p{
+font-size: 42px;
+margin-left: 10vh;
+margin-right: 10vh; 
+margin-top: 35px;
+margin-bottom: 35px;
+} 
+/*  FIN ACERCA DE MI */
+
+/*SERVICIOS*/
+.servicios h2{
+  font-size: 48px;
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  font-size: 34px;
+  margin-top: 30px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 48px;
+}
+
+input, textarea{
+  font-size: 30px;
+}
+
+.datos{
+  font-size: 40px;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  font-size: 30px;
+}
+
+}
+/*FIN PANTALLAS FULL HD 1920x1080*/
+
+
+/*PANTALLAS 1600x900 */
+@media screen and (min-width: 1600px) and (max-width: 1919px){
+  /*ESTRUCTURA SITIO WEB*/
+  .contenedor{
+    grid-template-rows: 10vh repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+  }
+  /*FIN ESTRUCTURA SITIO WEB*/
+
+  /*BARRA DE NAVEGACION*/
+  nav{
+    height: 10vh;
+    display: grid;
+    grid-template-rows: 10vh;
+    grid-template-columns: 33.3% 66.6%;
+    grid-template-areas: "logo lista";
+  }
+  
+  label.logo{
+    grid-area: logo;
+    color: white;
+    font-size: 40px;
+  /*  line-height: 80px;
+    padding: 100px; */
+    font-weight: bold;
+    place-self: center;
+  }
+  nav ul{
+    grid-area: lista;
+  /*  float: right; */
+    margin-right: 5vh;
+    align-self: center;
+    justify-self: end;
+  }
+  nav ul li{
+  /*  display: inline-block;
+    line-height: 80px; */
+    margin: 0 5px; 
+  }
+  nav ul li a{
+    color: white;
+    font-size: 20px;
+    padding: 7px 14px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  /*FIN BARRA DE NAVEGACIÓN*/
+
+  /*ESTILOS GENERALES*/
+  .sobre-mi, .servicios, .contacto{
+    padding-top: 10vh;
+}
+  /*FIN ESTILOS GENERALES*/
+
+  .inicio img{
+    border: 6px solid white;
+  };
+
+  /* ACERCA DE MI */
+.sobre-mi{
+  grid-area: sobre-mi;
+}
+
+.sobre-mi h2{
+font-size: 40px;
+margin-left: 10vh;
+margin-right: 10vh;
+margin-top: 40px;
+}
+
+.sobre-mi p{
+font-size: 36px;
+margin-left: 10vh;
+margin-right: 10vh; 
+margin-top: 15px;
+margin-bottom: 15px;
+} 
+/*  FIN ACERCA DE MI */ 
+
+/*SERVICIOS*/
+.servicios h2{
+  font-size: 44px;
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 44px;
+}
+
+input, textarea{
+  font-size: 20px;
+}
+.datos{
+  font-size: 30px;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  font-size: 20px;
+}
+/*FIN FOOTER*/
+}
+/*FIN PANTALLAS DE 1600x900*/
+
+/*PANTALLAS HD (1280x720)*/
+@media screen and (max-width: 1279px){/*1199px*/
+   /*BARRA DE NAVEGACIÓN*
+   label.logo{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+    padding: 7px 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+FIN BARRA DE NAVEGACIÓN*/
+
+ label.logo{
+    font-size: 30px;
+    padding-right: 25px;
+  }
+  /*INICIO*/
+  .inicio h1{
+    font-size: 30px;
+  }
+
+  .inicio h2{
+    font-size: 24px;
+  }
+
+  .fa-linkedin{
+    font-size: 30px;
+  }
+  /*FIN INICIO*/
+
+  /*ACERCA DE MI*/
+  .sobre-mi h2{
+    font-size: 30px;
+    margin-left: 8vh;
+    margin-right: 8vh;
+  }
+
+  .sobre-mi p{
+    font-size: 22px;
+    margin-left: 8vh;
+    margin-right: 8vh;
+  }
+  /*FIN ACERCA DE MI*/
+
+  /*SERVICIOS*/
+.servicios h2{
+  font-size: 30px;
+  margin-left: 5vh;
+}
+
+.grid-servicios{
+  margin-right: 8vh;
+  margin-left: 8vh;  
+}
+
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 30px;
+}
+
+.grid-contacto{
+  margin-left: 8vh;
+  margin-right: 8vh;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  margin-right: 8vh;
+  margin-left: 8vh;
+}
+/*FIN FOOTER*/
+}
+/*FIN PANTALLAS HD (1280x720)*/
+
+/*BARRA DE NAVEGACIÓN TRANSICION DISPOSITIVOS MEDIANOS Y TABLETS*/
+@media screen and (max-width: 1024px){ /*1006px*/
+ label.logo{
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+nav ul li a{
+  font-size: 16px;
+  padding: 7px 3px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+}
+/*FIN BARRA DE NAVEGACIÓN*/
+
+/*DISPOSITIVOS MEDIANOS - TABLETS PANORÁMICAS */
+@media screen and (max-width: 991px){
+  /*BARRA DE NAVEGACIÓN
+  label.logo{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+    padding: 7px 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+FIN BARRA DE NAVEGACIÓN*/
+
+  /*INICIO*/
+  .inicio h1{
+    font-size: 28px;
+  }
+
+  .inicio h2{
+    font-size: 22px;
+  }
+
+  .fa-linkedin{
+    font-size: 28px;
+  }
+  /*FIN INICIO*/
+
+  /*ACERCA DE MI*/
+  .sobre-mi h2{
+    font-size: 28px;
+    margin-left: 6vh;
+    margin-right: 6vh;
+  }
+
+  .sobre-mi p{
+    font-size: 22px;
+    margin-left: 6vh;
+    margin-right: 6vh;
+  }
+  /*FIN ACERCA DE MI*/
+
+  /*SERVICIOS*/
+  .servicios h2{
+    font-size: 26px;
+    margin-left: 5vh;
+  }
+
+  .servicios h3{
+    font-size: 20px;
+  }
+  
+  .grid-servicios{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 33.3%);
+    grid-template-areas: "investigacion auditoria"
+                          "editorial producto"
+                          "linkbuilding desempeño";
+    margin-left: 6vh;
+    margin-right: 6vh;
+    /*max-height: 100%;*/
+  }
+  /*FIN SERVICIOS*/
+
+  /*CONTACTO*/
+  .contacto h2{
+    font-size: 28px;
+  }
+  
+  .grid-contacto{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    /* grid-template-rows: repeat(2, minmax(100%, auto));*/
+    grid-template-rows: repeat(2, minmax(40vh, auto)); /*arreglo chrome/explorer*/
+    grid-template-areas: "form"
+                          "datos";
+    margin-left: 6vh;
+    margin-right: 6vh; 
+  /*  min-height: calc(100% - 80px); */
+  }
+
+  .form{
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content;
+    grid-template-areas: "formulario";
+  }
+
+  form{
+    grid-area: formulario;
+    /* grid-template-rows: 30px 30px 30px 30px 210px 30px;*/
+    grid-template-rows: 30px 30px 30px 240px 30px;
+  }
+
+  .datos{
+    grid-area: datos;
+    display: grid;
+    grid-template-columns: 100%;
+  /*  grid-template-rows: repeat(3, minmax(33.3%, auto)); */
+  grid-template-rows: repeat(3, minmax(16.7vh, auto));
+    grid-template-areas: "web"
+                          "telefono"
+                          "direccion";
+    align-items: center;
+    gap: 3vh;
+   /* height: minmax(50vh, auto); */
+   /* margin-top: 3vh; */
+  }
+  
+  .direccion-datos{
+    grid-area: direccion;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+  /*  margin-bottom: 5vh; */
+  }
+
+  .telefono-datos{
+    grid-area: telefono;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+  }
+
+  .web-datos{
+    grid-area: web;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+  }
+
+  .direccion-datos i, .telefono-datos i, .web-datos i{
+    grid-area: icono;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .direccion-datos h4, .telefono-datos h4, .web-datos h4{
+    grid-area: h4;
+    align-self: end;
+    justify-self: start;
+  }
+
+  .direccion-datos p, .telefono-datos p, .web-datos p{
+    grid-area: p;
+    align-self: start;
+    justify-self: start;
+  }
+.show{
+    display: none !important;
+}
+
+.hidden{
+    display: block !important;
+}
+}
+
+/*FIN DISPOSITIVOS MEDIANOS - TABLETS PANORAMICAS*/
+
+/* DISPOSITIVOS MEDIANOS Y TABLETS PANORAMICAS EN PANTALLA VERTICAL*/
+@media screen and (min-width: 991px) and (orientation: portrait){
+  .grid-servicios{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 33.3%);
+    grid-template-areas: "investigacion auditoria"
+                          "editorial producto"
+                          "linkbuilding desempeño";
+    margin-left: 6vh;
+    margin-right: 6vh;
+  }
+
+    
+  .form{
+    grid-area: form;
+  }
+
+    form{
+    /* grid-template-rows: 30px 30px 30px 30px 210px 30px; */
+    grid-template-rows: 30px 30px 30px 240px 30px;
+    }
+
+    .grid-contacto{
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(2, minmax(40vh, auto)); /*auto, 100%*/
+      grid-template-areas: "form"
+                            "datos";
+      margin-left: 6vh;
+      margin-right: 6vh;
+    }
+  
+  .datos{
+    grid-area: datos;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, minmax(33.3%, auto));
+    grid-template-areas: "web"
+                          "telefono"
+                          "direccion";
+    align-items: center;
+    gap: 3vh;
+  /*  margin-top: 3vh; */
+  }
+  
+  .direccion-datos{
+    grid-area: direccion;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+    margin-bottom: 0vh;
+  }
+
+  .telefono-datos{
+    grid-area: telefono;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+  }
+
+  .web-datos{
+    grid-area: web;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, minmax(50%, auto));
+    grid-template-areas: "icono h4"
+                          "icono p";
+    margin-top: 0px;
+  }
+
+  .direccion-datos i, .telefono-datos i, .web-datos i{
+    grid-area: icono;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .direccion-datos h4, .telefono-datos h4, .web-datos h4{
+    grid-area: h4;
+    align-self: end;
+    justify-self: start;
+  }
+
+  .direccion-datos p, .telefono-datos p, .web-datos p{
+    grid-area: p;
+    align-self: start;
+    justify-self: start;
+  }
+  
+  .show{
+      display: none !important;
+  }
+  
+  .hidden{
+      display: block !important;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait){ /*769PX ARREGLA BUG*/
+/*  .contenedor{
+  grid-template-rows: 80px repeat(3, minmax(auto, 100%)) minmax(auto, 93%) minmax(auto, 100%);
+} */
+/* .contenedor{
+  grid-template-rows: 80px repeat(3, minmax(100vh, auto)) minmax(93vh, auto) minmax(7vh, auto);
+} ESTA ES LA ORIGINAL*/
+
+.contenedor{
+  grid-template-rows: 80px minmax(100vh, auto) repeat(2, minmax(auto, 100%)) minmax(auto, 93%) minmax(7vh, auto);
+}
+
+.inicio img{
+    width:20vh;
+    height: 20%;
+}
+
+.sobre-mi h2{
+  font-size: 36px;
+}
+ 
+.sobre-mi p{
+  font-size: 30px;
+} 
+
+.grid-servicios{
+  max-height: 100vh;
+/*  margin-bottom: 5vh; *//*<----- MARGEN EXPERIMENTAL*/
+}
+
+.investigacion i, .auditoria i, .editorial i, .producto i, .linkbuilding i, .desempeño i{
+  font-size: 22px; /*original 50px*/
+  margin-top: 50px;
+}
+
+.investigacion h3, .auditoria h3, .editorial h3, .producto h3, .linkbuilding h3, .desempeño h3{
+  font-size: 22px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.grid-contacto{
+  grid-template-rows: repeat(2, minmax(auto, 40%)); 
+  gap: 2.5vh;
+  margin-bottom: 2vh;
+} 
+
+.datos{
+  grid-template-rows: repeat(3, minmax(auto, 33.3%)); /*NO ES ORIGINAL 16.7*/
+}
+
+/* .direccion-datos{
+  margin-top: 5vh;
+} */
+
+
+}
+/*FIN DISPOSITIVOS MEDIANOS Y TABLETS PANORAMICAS EN PANTALLA VERTICAL*/
+
+/*BARRA DE NAVEGACION TRANSICION CELULARES Y TABLETS*/
+@media screen and (max-width: 846px){
+   /*BARRA DE NAVEGACIÓN*/
+   label.logo{
+    font-size: 27px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  nav ul li a{
+    font-size: 14px;
+    padding: 7px 1px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+/*FIN BARRA DE NAVEGACIÓN*/
+}
+
+/* DISPOSITIVOS DESDE 600PX DE ANCHO - TABLETS PEQUEÑAS Y CELULARES GRANDES*/
+
+@media screen and (max-width: 767px){
+    /*BARRA DE NAVEGACIÓN*/
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #c9d6df;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+      color: #1e2022
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+    /*FIN BARRA DE NAVEGACIÓN*/
+
+  /* INICIO */
+  .inicio img{
+    width: 25vh; /*30vh*/
+    height: 25%; /*30%*/
+    border-radius: 50%;
+    align-self: center;
+}
+
+.inicio h1{
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.inicio h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.fa-linkedin{
+  font-size: 26px;
+}
+/* FIN INICIO */
+  
+/* ACERCA DE MI*/  
+  .sobre-mi h2{
+    font-size: 26px;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    margin-top: 34px;
+  }
+   
+  .sobre-mi p{
+    font-size: 21px;
+    margin-left: 4vh;
+    margin-right: 4vh; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+  } 
+/*FIN ACERCA DE MI*/
+
+/*SERVICIOS*/
+.servicios h2{
+  font-size: 26px;
+  margin-left: 5vh;
+}
+
+.servicios h3{
+  font-size: 20px;
+}
+  .grid-servicios{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 16.7%); /*(6,100%)*/
+    grid-template-areas: "investigacion"
+                         "auditoria"
+                          "editorial"
+                          "producto"
+                          "linkbuilding"
+                          "desempeño";
+    margin-right: 4vh;
+    margin-left: 4vh;
+  }
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+
+.contacto h2{
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+  .grid-contacto{
+    margin-left: 4vh;
+    margin-right: 4vh;
+/*    grid-template-rows: repeat(2, minmax(50%, auto)); /*arreglo chrome/explorer*/
+  }
+
+  form{
+    display: grid;
+    grid-template-columns: 100%;
+     /* grid-template-rows: 5vh 5vh 5vh 5vh 5vh 37vh 5vh; */
+/*   grid-template-rows: 30px 30px 30px 30px 30px 210px 30px;
+      grid-template-areas: "nombre"
+                           "apellido"
+                           "email"
+                           "telefono"
+                           "asunto"
+                           "mensaje"
+                           "enviar"; */
+
+      grid-template-rows: 30px 30px 30px 240px 30px;
+      grid-template-areas: "nombre"
+                           "email"
+                           "asunto"
+                           "mensaje"
+                           "enviar";
+      
+      grid-gap: 1vh;
+  }
+
+  .datos{
+    grid-area: datos;
+    display: grid;
+    grid-template-columns: 100%;
+  /*  grid-template-rows: repeat(3, minmax(33.3%, auto)); */
+  grid-template-rows: repeat(3, minmax(16.7vh, auto));
+    grid-template-areas: "web"
+                          "telefono"
+                          "direccion";
+  /*  align-items: center; */
+ margin-top: 2vh;
+    margin-bottom: 5vh;
+    margin-left: 0px;
+    gap: 0vh;
+  }
+  
+  .direccion-datos{
+    grid-area: direccion;
+    display: grid;
+    grid-template-columns: 100%;
+  grid-template-rows: repeat(3, minmax(33.3%, auto));
+/*  grid-template-rows: repeat(3, minmax(7vh, auto)); */
+    grid-template-areas: "icono"
+                          "h4"
+                          "p";
+ /*   margin-top: 15vh; */
+    margin-bottom: 3vh;
+  }
+
+  .direccion-datos p{
+    justify-self: center;
+  }
+
+  .telefono-datos{
+    grid-area: telefono;
+    display: grid;
+    grid-template-columns: 100%;
+  grid-template-rows: repeat(3, minmax(33.3%, auto));
+  /*  grid-template-rows: repeat(3, minmax(7vh, auto)); */
+    grid-template-areas: "icono"
+                          "h4"
+                          "p";
+    margin-top: 0px;
+  }
+
+  .web-datos{
+    grid-area: web;
+    display: grid;
+    grid-template-columns: 100%;
+  grid-template-rows: repeat(3, minmax(33.3%, auto));
+  /*  grid-template-rows: repeat(3, minmax(7vh, auto)); */
+    grid-template-areas: "icono"
+                          "h4"
+                          "p";
+    margin-top: 0px;
+  }
+
+  .direccion-datos i, .telefono-datos i, .web-datos i{
+    grid-area: icono;
+    place-self: center;
+  }
+
+  .direccion-datos h4, .telefono-datos h4, .web-datos h4{
+    grid-area: h4;
+    place-self: center;
+  }
+
+  .direccion-datos p, .telefono-datos p, .web-datos p{
+    grid-area: p;
+   place-self: center;
+  }
+
+.show{
+    display: none !important;
+}
+
+.hidden{
+    display: block !important;
+} 
+}
+
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  margin-right: 4vh;
+  margin-left: 4vh;
+}
+/*FIN FOOTER*/
+
+@media screen and (max-width: 767px) and (orientation: landscape){
+  .inicio img{
+    width: 35vh;
+    height: 35%;
+  }
+}
+/*FIN DISPOSITIVOS DESDE 600PX DE ANCHO - TABLETS PEQUEÑAS Y CELULARES GRANDES*/
+
+/* DISPOSITIVOS DESDE 400PX DE ANCHO - CELULARES PEQUEÑOS*/
+@media screen and (max-width: 599px){
+  /*INICIO*/
+  .inicio h1{
+    font-size: 24px;
+  }
+
+  .inicio h2{
+    font-size: 18px;
+  }
+
+  .fa-linkedin{
+    font-size: 24px;
+  }
+  /*FIN INICIO*/
+
+  /*ACERCA DE MI*/
+  .sobre-mi h2{
+    font-size: 24px;
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
+
+  .sobre-mi p{
+    font-size: 18px;
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
+  /*FIN ACERCA DE MI*/
+
+  /*SERVICIOS*/
+.servicios h2{
+  font-size: 26px;
+  margin-left: 5vh;
+}
+
+.grid-servicios{
+  margin-right: 2vh;
+  margin-left: 2vh;  
+}
+/*FIN SERVICIOS*/
+
+/*CONTACTO*/
+.contacto h2{
+  font-size: 24px;
+}
+
+.grid-contacto{
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+
+.form{
+  max-height: 50%;
+}
+
+.direccion-datos{
+  margin-top: 2vh; /*2*/
+  text-align: center;
+}
+
+.telefono-datos, .web-datos{
+  margin-top: 4vh;
+}
+/*FIN CONTACTO*/
+
+/*FOOTER*/
+footer p{
+  margin-right: 2vh;
+  margin-left: 2vh;
+  font-size: 12px;
+}
+/*FIN FOOTER*/
+}
+/*FIN DISPOSITIVOS DESDE 400PX DE ANCHO - CELULARES PEQUEÑOS*/
+
+
+@media screen and (max-width: 399px){
+  label.logo{
+    padding-right: 25px;
+    font-size: 25px;
+  }
+  .checkbtn{
+    margin-right: 20px;
+  }
+  nav ul li{
+    margin: 20px 0px;
+  }
+}
+
+@media screen and (max-width: 299px){
+  label.logo{
+    font-size: 20px;
+    padding-left: 10px; /*completar estilos aqui*/
+  }
+}
+
+ @media screen and (max-height: 599px) and (orientation: landscape) and (max-width: 767px){
+  .datos{
+    margin-top: 15vh;
+  }
+} 
+
+/*(max-width: 767px)*/
+@media screen and (max-height: 499px) and (orientation: landscape) and (max-width: 767px){
+  nav ul li{
+    margin: 30px 0px;
+  }
+
+  .datos{
+    gap: 5vh;
+  }
+}
+
+/*and (max-width: 767px)*/
+@media screen and (max-height: 399px) and (orientation: landscape) and (max-width: 767px){
+  nav ul li{
+    margin: 25px 0px;
+  }
+
+} 
+
+/*and (max-width: 350px)*/
+@media screen and (max-height: 299px) and (orientation: landscape) and (max-width: 350px){
+  nav ul li{
+    margin: 9px 0px;
+  }
+
+  nav ul li a{
+    font-size: 15px;
+  }
+} 
+
+
+/* MEDIA QUERIES ORIGINALES - BARRA DE NAVEGACIÓN */
+
+/*@media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+} */
+
+/* @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  } */
+  /*FIN MEDIA QUERIES ORIGINALES - BARRA DE NAVEGACION*/
